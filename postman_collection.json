@@ -1,0 +1,32 @@
+{
+  "info": {
+    "name": "JeLeApps Test API",
+    "description": "API: Регистрация + Профиль",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "https://ppanisle.beget.tech" }
+  ],
+  "item": [
+    {
+      "name": "Регистрация",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "url": { "raw": "{{base_url}}/api/registration", "host": ["{{base_url}}"], "path": ["api", "registration"] },
+        "body": { "mode": "raw", "raw": "{\"email\":\"test@example.com\",\"password\":\"12345678\",\"gender\":\"male\"}" }
+      }
+    },
+    {
+      "name": "Профиль",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": { "raw": "{{base_url}}/api/profile?user_id=1", "host": ["{{base_url}}"], "path": ["api", "profile"], "query": [{ "key": "user_id", "value": "1" }] }
+      }
+    }
+  ]
+}
